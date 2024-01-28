@@ -1,24 +1,51 @@
 body {
-    font-family: 'Open Sans', sans-serif; /* Use a more readable font */
-    color: #333; /* Adjust text color */
-    background-color: #f5f5f5; /* Set a light background */
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: #fff; /* Clean white background */
+  border: 1px solid #ddd; /* Subtle border around the page */
+  margin: 0; /* Remove default margins */
 }
 
 .section {
-    padding: 60px 0; /* Add some padding for better spacing */
+  padding: 40px; /* Adjust padding for a more spacious feel */
+  border-radius: 8px; /* Soften edges for a modern touch */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .title {
-    font-size: 36px; /* Make the title larger */
-    margin-bottom: 20px; /* Add spacing below the title */
+  font-size: 36px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #54a0ff; /* Highlight the title with a border */
 }
 
 .subtitle {
-    font-size: 18px; /* Adjust subtitle size */
-    font-weight: 300; /* Use a lighter font weight for the subtitle */
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none; /* Remove default list markers */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margins */
+}
+
+li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee; /* Separate list items with borders */
 }
 
 .button {
-    background-color: #54a0ff; /* Set a custom button color */
-    border-color: #54a0ff; /* Match the border color */
+  background-color: #54a0ff;
+  border: none; /* Remove default button border */
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px; /* Rounded corners for the button */
+  text-transform: uppercase; /* Stylish text for the button */
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out; /* Add a hover effect */
+}
+
+.button:hover {
+  background-color: #4a90e2; /* Slightly darken the button on hover */
 }
