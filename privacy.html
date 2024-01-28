@@ -20,24 +20,16 @@
         #container {
             display: inline-block;
             padding: 20px;
-            background: linear-gradient(45deg, #add8e6, #000); /* Baby-blue and black gradient */
             border-radius: 10px;
-            border: 2px dotted #000; /* Border with dotted pattern in black */
+            border: 2px dotted black; /* Initial border color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             margin: 20px;
             position: relative;
+            transition: border-color 3s ease; /* Border color transition over 3 seconds */
         }
 
-        #dots-pattern {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAmklEQVR42mP8z8AcwBjs4Ed5TgEhDhrABYgC2gAaSBjGAGgApoAqYBGoApgAqYCpgEagClgGmAaoAqYCpgGJAIiCNIH/wRY1EAAAAASUVORK5CYII='); /* Black dots pattern */
-            mix-blend-mode: multiply;
-            pointer-events: none;
+        #container:hover {
+            border-color: #add8e6; /* Final border color on hover */
         }
 
         h1, h2, p {
@@ -63,8 +55,6 @@
 
 <body>
     <div id="container">
-        <div id="dots-pattern"></div>
-
         <h1 style="font-size: 48px;"><strong>Knight's Privacy Policy</strong></h1>
 
         <p style="font-size: 16px;">Knight is a Discord bot made with Python. Here you can see its <strong>Privacy Policy.</strong></p>
