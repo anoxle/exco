@@ -4,34 +4,92 @@
 <title>Knight Discord Bot</title>
 <style>
   body {
-    background-color: black; /* Matching the black background from the image */
-    color: #fff; /* Using white text for contrast */
+    color: #000;
     font-family: sans-serif;
     text-align: center;
   }
 
+  #container {
+    background-color: #fff; /* Initially white */
+    min-height: 100vh;
+    padding: 30px;
+  }
+
   h1 {
-    color: purple; /* Using purple for the heading, as seen in the image */
+    color: purple;
     margin-top: 50px;
   }
 
   a {
-    color: #fff; /* White links for visibility */
+    color: #000;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: purple; /* Using purple for button-like appearance */
     margin-bottom: 10px;
+  }
+
+  .theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .theme-switch label {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .theme-switch input {
+    display: none;
+  }
+
+  .theme-switch label.active {
+    background-color: #ccc;
+  }
+
+  #container.dark {
+    background-color: #000;
+    color: #fff;
+  }
+  #container.dark h1 {
+    color: #fff;
+  }
+  #container.dark a {
+    color: #fff;
   }
 </style>
 </head>
 <body>
-  <h1>KNIGHT</h1>
-  <p>A Discord bot with many commands, completely free!</p>
+  <div id="container">
+    <h1>KNIGHT</h1>
+    <p>A Discord bot with many commands, completely free!</p>
 
-  <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
-  <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
-  <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
-  <a href="https://youtube.com/@luxpog">LUXPOG</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
+    <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
+    <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
+    <a href="https://youtube.com/@luxpog">LUXPOG</a>
+
+    <div class="theme-switch">
+      <label for="theme-toggle">Dark</label>
+      <input type="checkbox" id="theme-toggle">
+      <label for="theme-toggle">Light</label>
+    </div>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const container = document.getElementById('container');
+
+    themeToggle.addEventListener('change', function() {
+      if (themeToggle.checked) {
+        container.classList.add('dark');
+      } else {
+        container.classList.remove('dark');
+      }
+    });
+  </script>
 </body>
 </html>
