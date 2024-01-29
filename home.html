@@ -95,6 +95,35 @@
     display: flex;
     opacity: 1;
   }
+
+  /* Added CSS for dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Background color for dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: #000;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ccc; /* Background color for dropdown items on hover */
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 </style>
 </head>
 <body>
@@ -104,6 +133,14 @@
 
     <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
     <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
+    <div class="dropdown">
+      <button class="dropbtn">More</button>
+      <div class="dropdown-content">
+        <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
+        <a href="https://anoxle.github.io/knight/tos">Terms</a>
+        <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
+      </div>
+    </div>
     <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
     <a href="https://youtube.com/@luxpog">LUXPOG</a>
 
