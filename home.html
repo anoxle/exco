@@ -9,6 +9,7 @@
     color: #000;
     font-family: sans-serif;
     text-align: center;
+    margin: 0;
   }
 
   #container {
@@ -63,6 +64,26 @@
     color: #fff;
     border-color: #fff; /* Adjust border color for dark theme */
   }
+
+  /* Added CSS for buttons */
+  .scroll-buttons {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .scroll-buttons a {
+    margin: 0 10px;
+  }
+
+  .scroll-buttons.show {
+    display: flex;
+    opacity: 1;
+  }
 </style>
 </head>
 <body>
@@ -82,15 +103,31 @@
     </div>
   </div>
 
+  <!-- Added scroll buttons -->
+  <div class="scroll-buttons" id="scrollButtons">
+    <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
+    <a href="https://anoxle.github.io/knight/tos">Terms</a>
+    <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
+  </div>
+
   <script>
     const themeToggle = document.getElementById('theme-toggle');
     const container = document.getElementById('container');
+    const scrollButtons = document.getElementById('scrollButtons');
 
     themeToggle.addEventListener('change', function() {
       if (themeToggle.checked) {
         container.classList.add('dark');
       } else {
         container.classList.remove('dark');
+      }
+    });
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        scrollButtons.classList.add('show');
+      } else {
+        scrollButtons.classList.remove('show');
       }
     });
   </script>
