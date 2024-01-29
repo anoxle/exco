@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home - Knight.</title>
+<title>Home - Knight</title>
 <link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
 <style>
   body {
@@ -98,8 +98,19 @@
 
   /* Added CSS for dropdown */
   .dropdown {
-    position: relative;
     display: inline-block;
+    position: relative;
+  }
+
+  .dropdown button {
+    background-color: purple;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
   .dropdown-content {
@@ -108,6 +119,15 @@
     background-color: #fff; /* Background color for dropdown */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .dropdown-content a {
@@ -115,14 +135,24 @@
     padding: 10px 20px;
     display: block;
     text-decoration: none;
+    transition: background-color 0.3s ease;
   }
 
   .dropdown-content a:hover {
     background-color: #ccc; /* Background color for dropdown items on hover */
   }
 
-  .dropdown:hover .dropdown-content {
-    display: block;
+  .dropdown.dark button {
+    background-color: #fff;
+    color: purple;
+  }
+
+  .dropdown.dark .dropdown-content {
+    background-color: #000;
+  }
+
+  .dropdown.dark .dropdown-content a {
+    color: #fff;
   }
 </style>
 </head>
