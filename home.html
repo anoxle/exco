@@ -3,211 +3,40 @@
 <head>
 <title>Home! - Knight</title>
 <link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
-<style>
-  body {
-    background-color: #fff;
-    color: #000;
-    font-family: sans-serif;
-    text-align: center;
-    margin: 0;
-  }
-
-  #container {
-    min-height: 100vh;
-    padding: 30px;
-  }
-
-  h1 {
-    color: purple;
-    margin-top: 50px;
-  }
-
-  a {
-    color: #000;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 2px solid purple; /* Added border here */
-    margin-bottom: 10px;
-  }
-
-  .theme-switch {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  .theme-switch label {
-    display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .theme-switch input {
-    display: none;
-  }
-
-  .theme-switch label.active {
-    background-color: #ccc;
-  }
-
-  #container.dark {
-    background-color: #000;
-    color: #fff;
-  }
-  #container.dark h1 {
-    color: #fff;
-  }
-  #container.dark a {
-    color: #fff;
-    border-color: #fff; /* Adjust border color for dark theme */
-  }
-
-  /* Added CSS for buttons */
-  .scroll-buttons {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .scroll-buttons a {
-    margin: 0 10px;
-    color: #fff; /* Set text color for buttons */
-    background-color: purple; /* Set background color for buttons */
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 2px solid #fff;
-    text-decoration: none;
-  }
-
-  .scroll-buttons a:hover {
-    background-color: #fff; /* Set background color for buttons on hover */
-    color: purple; /* Set text color for buttons on hover */
-  }
-
-  .scroll-buttons.show {
-    display: flex;
-    opacity: 1;
-  }
-
-  /* Added CSS for dropdown */
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .dropdown button {
-    background-color: purple;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff; /* Background color for dropdown */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .dropdown-content a {
-    color: #000;
-    padding: 10px 20px;
-    display: block;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #ccc; /* Background color for dropdown items on hover */
-  }
-
-  .dropdown.dark button {
-    background-color: #000;
-    color: purple;
-  }
-
-  .dropdown.dark .dropdown-content {
-    background-color: purple;
-  }
-
-  .dropdown.dark .dropdown-content a {
-    color: #fff;
-  }
-</style>
+<link rel="stylesheet" href="homestyle.css">
+<script>
+// JavaScript code for dropdown and theme toggle
+</script>
 </head>
 <body>
-  <div id="container">
-    <h1>KNIGHT</h1>
-    <p>A Discord bot with many commands, completely free!</p>
+<div id="container">
+  <h1>KNIGHT</h1>
+  <p>A Discord bot with many commands, completely free!</p>
 
-    <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
-    <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
-    <div class="dropdown">
-      <button class="dropbtn">More</button>
-      <div class="dropdown-content">
-        <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
-        <a href="https://anoxle.github.io/knight/tos">Terms</a>
-        <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
-      </div>
-    </div>
-    <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
-    <a href="https://youtube.com/@luxpog">LUXPOG</a>
-
-    <div class="theme-switch">
-      <label for="theme-toggle">Dark</label>
-      <input type="checkbox" id="theme-toggle">
-      <label for="theme-toggle">Light</label>
+  <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
+  <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="document.querySelector('.dropdown-content').classList.toggle('show')">More</button>
+    <div class="dropdown-content">
+      <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
+      <a href="https://anoxle.github.io/knight/tos">Terms</a>
+      <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
     </div>
   </div>
+  <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
+  <a href="https://youtube.com/@luxpog">LUXPOG</a>
 
-  <!-- Added scroll buttons -->
-  <div class="scroll-buttons" id="scrollButtons">
-    <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
-    <a href="https://anoxle.github.io/knight/tos">Terms</a>
-    <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
+  <div class="theme-switch">
+    <label for="theme-toggle">Dark</label>
+    <input type="checkbox" id="theme-toggle">
+    <label for="theme-toggle">Light</label>
   </div>
+</div>
 
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const container = document.getElementById('container');
-    const scrollButtons = document.getElementById('scrollButtons');
-
-    themeToggle.addEventListener('change', function() {
-      if (themeToggle.checked) {
-        container.classList.add('dark');
-      } else {
-        container.classList.remove('dark');
-      }
-    });
-
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 100) {
-        scrollButtons.classList.add('show');
-      } else {
-        scrollButtons.classList.remove('show');
-      }
-    });
-  </script>
+<div class="scroll-buttons" id="scrollButtons">
+  <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
+  <a href="https://anoxle.github.io/knight/tos">Terms</a>
+  <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
+</div>
 </body>
 </html>
