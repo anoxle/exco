@@ -80,5 +80,32 @@
       }, 3000);
     </script>
   </div>
+
+<!-- Add this script to your HTML -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const statusText = document.getElementById('status');
+    const botStatusBox = document.getElementById('botStatusBox');
+    const botStatus = document.getElementById('botStatus');
+
+    // Make an AJAX request to your server
+    fetch('http://localhost:3000/status')
+      .then(response => response.json())
+      .then(data => {
+        const isOnline = data.isOnline;
+
+        // Update the UI based on the server response
+        if (isOnline) {
+          botStatusBox.style.backgroundColor = 'green';
+          botStatus.textContent = 'Bot is online!';
+        } else {
+          botStatusBox.style.backgroundColor = 'red';
+          botStatus.textContent = 'Bot is offline!';
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+  
 </body>
 </html>
