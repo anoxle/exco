@@ -1,78 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Knight's Servers</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    #container {
-      margin: 50px;
-    }
-
-    h1 {
-      color: purple;
-    }
-
-    p {
-      font-size: 18px;
-    }
-
-    .progress-container {
-      width: 50%;
-      margin: 20px auto;
-    }
-
-    .progress-bar {
-      width: 0;
-      height: 20px;
-      background-color: purple;
-      transition: width 2s ease-in-out;
-    }
-
-    #progressStatus {
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div id="container">
-    <h1>Welcome to Knight's Servers!</h1>
-    <p>You can view the status of the servers of Knight.</p>
-
-    <div class="progress-container">
-      <div class="progress-bar" id="knightProgressBar"></div>
-    </div>
-
-    <p id="progressStatus">Progress: <span id="percentage">0</span>%</p>
-
-    <script>
-      // Simulate progress bar animation
-      const progressBar = document.getElementById("knightProgressBar");
-      const progressStatus = document.getElementById("percentage");
-
-      setTimeout(() => {
-        progressBar.style.width = "13%";
-        progressStatus.textContent = "13";
-      }, 1000);
-
-      setTimeout(() => {
-        progressBar.style.width = "50%";
-        progressStatus.textContent = "50";
-      }, 3000);
-
-      // Add more steps as needed
-      // Ensure the progress doesn't go to 0%
-      setTimeout(() => {
-        if (parseInt(progressStatus.textContent) === 0) {
-          alert("Bot will crash!");
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy - Knight</title>
+    <link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #add8e6; /* Baby-blue background color */
+            overflow: hidden;
         }
-      }, 5000); // Adjust the timing as needed
-    </script>
-  </div>
+
+        #container {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dotted black; /* Initial border color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            position: relative;
+            transition: border-color 3s ease; /* Border color transition over 3 seconds */
+        }
+
+        #container:hover {
+            border-color: #add8e6; /* Final border color on hover */
+        }
+
+        h1, h2, p {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="font-size: 48px;"><strong>Knight's Privacy Policy</strong></h1>
+
+        <p style="font-size: 16px;">Knight is a Discord bot made with Python. Here you can see its <strong>Privacy Policy.</strong></p>
+
+        <h2 style="font-size: 24px; text-decoration: underline;"><strong>Information Collection</strong></h2>
+
+        <p style="font-size: 16px;">This bot collects the following information:</p>
+
+        <ul>
+            <li style="font-size: 16px;">Your Discord username and ID</li>
+            <li style="font-size: 16px;">The servers you use the bot on</li>
+            <li style="font-size: 16px;">Your interactions with the bot's commands</li>
+        </ul>
+
+        <h2 style="font-size: 24px;"><strong>Information Use</strong></h2>
+
+        <p style="font-size: 16px;">This bot uses your information to:</p>
+
+        <ul>
+            <li style="font-size: 16px;">Provide the bot's functionality</li>
+            <li style="font-size: 16px;">Personalize your experience</li>
+            <li style="font-size: 16px;">Improve the bot's performance</li>
+        </ul>
+
+        <h2 style="font-size: 24px; text-decoration: underline;"><strong>Information Sharing</strong></h2>
+
+        <p style="font-size: 16px;">This bot <u>does not</u> share your information with any third parties.</p>
+
+        <h2 style="font-size: 24px;"><strong>Data Retention</strong></h2>
+
+        <p style="font-size: 16px;">This bot retains your information for as long as you <u>use the bot</u>. You can <u>request to have your information deleted at any time</u>.</p>
+
+        <h2 style="font-size: 24px; text-decoration: underline;"><strong>Contact Information</strong></h2>
+
+        <p style="font-size: 18px;">If you have any questions or concerns about this privacy policy, please contact us at: anoxlemain@gmail.com</p>
+
+        <p style="font-size: 16px;">&nbsp;</p>
+
+        <a class="button" href="https://shorturl.at/ghuDE">Add the bot</a>
+    </div>
 </body>
+
 </html>
