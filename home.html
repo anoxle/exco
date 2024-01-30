@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home - Knight</title>
+  <title>Home# - Knight</title>
   <link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
   <style>
     body {
@@ -32,41 +32,6 @@
       margin-bottom: 10px;
     }
 
-    .theme-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .theme-switch label {
-      display: inline-block;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .theme-switch input {
-      display: none;
-    }
-
-    .theme-switch label.active {
-      background-color: #ccc;
-    }
-
-    #container.dark {
-      background-color: #000;
-      color: #fff;
-    }
-    #container.dark h1 {
-      color: #fff;
-    }
-    #container.dark a {
-      color: #fff;
-      border-color: #fff; /* Adjust border color for dark theme */
-    }
-
-    /* Added CSS for buttons */
     .scroll-buttons {
       display: none;
       position: fixed;
@@ -97,7 +62,6 @@
       opacity: 1;
     }
 
-    /* Added CSS for dropdown */
     .dropdown {
       display: inline-block;
       position: relative;
@@ -145,6 +109,30 @@
       background-color: #ccc; /* Background color for dropdown items on hover */
     }
 
+    .dropdown button:hover + .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 20px;
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ccc; /* Background color for dropdown items on hover */
+    }
+
+    #container.dark {
+      background-color: #000;
+      color: #fff;
+    }
+
     .dropdown.dark button {
       background-color: #000;
       color: purple;
@@ -157,32 +145,9 @@
     .dropdown.dark .dropdown-content a {
       color: #fff;
     }
-
-    /* Added CSS for loading */
-    .loading-bar {
-      width: 0;
-      height: 4px;
-      background-color: purple;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transition: width 3s ease;
-    }
-
-    .loading-text {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 18px;
-    }
   </style>
 </head>
 <body>
-  <!-- Loading bar -->
-  <div class="loading-bar" id="loadingBar"></div>
-  <div class="loading-text">Loading...</div>
-
   <!-- Main content -->
   <div id="container">
     <h1>KNIGHT</h1>
@@ -190,7 +155,7 @@
 
     <a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands">ADD BOT</a>
     <a href="https://discord.gg/daTBw2wMuP">SUPPORT SERVER</a>
-    <div class="dropdown" onclick="toggleDropdown(this)">
+    <div class="dropdown">
       <button class="dropbtn">More</button>
       <div class="dropdown-content">
         <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
@@ -201,12 +166,6 @@
     <a href="https://anoxle.github.io/knight/bots">Partnered BOTS</a>
     <a href="https://youtube.com/@luxpog">LUXPOG</a>
 
-    <div class="theme-switch">
-      <label for="theme-toggle">Loading</label>
-      <input type="checkbox" id="theme-toggle" disabled>
-      <label for="theme-toggle">Loading</label>
-    </div>
-
     <!-- Added scroll buttons -->
     <div class="scroll-buttons" id="scrollButtons">
       <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
@@ -215,16 +174,17 @@
     </div>
   </div>
 
+  <!-- Loading bar -->
+  <div id="loadingBar"></div>
+
   <script>
     const container = document.getElementById('container');
     const loadingBar = document.getElementById('loadingBar');
-    const themeToggle = document.getElementById('theme-toggle');
     const scrollButtons = document.getElementById('scrollButtons');
 
     // Loading sequence
     setTimeout(() => {
       loadingBar.style.width = '25%';
-      themeToggle.disabled = false;
     }, 3000);
 
     setTimeout(() => {
@@ -249,18 +209,6 @@
         scrollButtons.classList.add('show');
       } else {
         scrollButtons.classList.remove('show');
-      }
-    });
-
-    function toggleDropdown(dropdown) {
-      dropdown.classList.toggle('active');
-    }
-
-    themeToggle.addEventListener('change', function() {
-      if (themeToggle.checked) {
-        container.classList.add('dark');
-      } else {
-        container.classList.remove('dark');
       }
     });
   </script>
