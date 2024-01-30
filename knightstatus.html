@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Knight's Servers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #container {
+      margin: 50px;
+    }
+
+    h1 {
+      color: purple;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .progress-container {
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 20px;
+      background-color: purple;
+      transition: width 2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Welcome to Knight's Servers!</h1>
+    <p>You can view the status of the servers of Knight.</p>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="knightProgressBar"></div>
+    </div>
+
+    <script>
+      // Simulate progress bar animation
+      const progressBar = document.getElementById("knightProgressBar");
+
+      setTimeout(() => {
+        progressBar.style.width = "13%";
+      }, 1000);
+
+      setTimeout(() => {
+        progressBar.style.width = "50%";
+      }, 3000);
+
+      // Add more steps as needed
+    </script>
+  </div>
+</body>
+</html>
