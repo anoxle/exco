@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home! - Knight</title>
+  <title>Home - Knight</title>
   <link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
   <style>
     body {
@@ -15,6 +15,7 @@
     #container {
       min-height: 100vh;
       padding: 30px;
+      display: none; /* Initially hide the container */
     }
 
     h1 {
@@ -156,9 +157,33 @@
     .dropdown.dark .dropdown-content a {
       color: #fff;
     }
+
+    /* Added CSS for loading */
+    .loading-bar {
+      width: 0;
+      height: 4px;
+      background-color: purple;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: width 3s ease;
+    }
+
+    .loading-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
+  <!-- Loading bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+  <div class="loading-text">Loading...</div>
+
+  <!-- Main content -->
   <div id="container">
     <h1>KNIGHT</h1>
     <p>A Discord bot with many commands, completely free!</p>
@@ -177,31 +202,47 @@
     <a href="https://youtube.com/@luxpog">LUXPOG</a>
 
     <div class="theme-switch">
-      <label for="theme-toggle">Dark</label>
-      <input type="checkbox" id="theme-toggle">
-      <label for="theme-toggle">Light</label>
+      <label for="theme-toggle">Loading</label>
+      <input type="checkbox" id="theme-toggle" disabled>
+      <label for="theme-toggle">Loading</label>
+    </div>
+
+    <!-- Added scroll buttons -->
+    <div class="scroll-buttons" id="scrollButtons">
+      <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
+      <a href="https://anoxle.github.io/knight/tos">Terms</a>
+      <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
     </div>
   </div>
 
-  <!-- Added scroll buttons -->
-  <div class="scroll-buttons" id="scrollButtons">
-    <a href="https://anoxle.github.io/knight/privacy">Privacy</a>
-    <a href="https://anoxle.github.io/knight/tos">Terms</a>
-    <a href="https://anoxle.github.io/knight/verifyme">VerifyMe</a>
-  </div>
-
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
     const container = document.getElementById('container');
+    const loadingBar = document.getElementById('loadingBar');
+    const themeToggle = document.getElementById('theme-toggle');
     const scrollButtons = document.getElementById('scrollButtons');
 
-    themeToggle.addEventListener('change', function() {
-      if (themeToggle.checked) {
-        container.classList.add('dark');
-      } else {
-        container.classList.remove('dark');
-      }
-    });
+    // Loading sequence
+    setTimeout(() => {
+      loadingBar.style.width = '25%';
+      themeToggle.disabled = false;
+    }, 3000);
+
+    setTimeout(() => {
+      loadingBar.style.width = '50%';
+    }, 6000);
+
+    setTimeout(() => {
+      loadingBar.style.width = '75%';
+    }, 9000);
+
+    setTimeout(() => {
+      loadingBar.style.width = '100%';
+      container.style.display = 'block';
+      document.querySelector('.loading-text').innerHTML = 'Loaded!';
+      setTimeout(() => {
+        document.querySelector('.loading-text').style.display = 'none';
+      }, 1000);
+    }, 12000);
 
     window.addEventListener('scroll', function() {
       if (window.scrollY > 100) {
@@ -214,6 +255,14 @@
     function toggleDropdown(dropdown) {
       dropdown.classList.toggle('active');
     }
+
+    themeToggle.addEventListener('change', function() {
+      if (themeToggle.checked) {
+        container.classList.add('dark');
+      } else {
+        container.classList.remove('dark');
+      }
+    });
   </script>
 </body>
 </html>
