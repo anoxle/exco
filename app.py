@@ -22,5 +22,5 @@ def index():
     return render_template('statusindex.html', status=online_status)
 
 if __name__ == '__main__':
-    client.run('your_bot_token')  # Replace with your bot's token
+    client.run('MTIwMDk4ODg4MTg2MDk3MjU0NA.G2cWac.mdH-8Gf98JQFVRkJk8mZ6S7crnWIPhmBkE1kVw')  # Replace with your bot's token
     app.run(host='0.0.0.0', port=5000)  # Run Flask app
