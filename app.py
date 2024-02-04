@@ -19,7 +19,7 @@ async def on_disconnect():
 @app.route('/')
 def index():
     online_status = "Bot is online" if bot_online else "Bot is offline!"
-    return render_template('statusindex.html', status=online_status)
+    return render_template('status.html', status=online_status)
 
 if __name__ == '__main__':
     client.run('MTIwMDk4ODg4MTg2MDk3MjU0NA.G2cWac.mdH-8Gf98JQFVRkJk8mZ6S7crnWIPhmBkE1kVw')  # Replace with your bot's token
