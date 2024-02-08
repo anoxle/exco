@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Community!</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #f09462, #f28061, #f46d60, #f65a5e, #f8475c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .button {
+      background-color: #2ECC71;
+      color: white;
+      padding: 15px 32px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <a href="https://example.com" target="_blank" class="button">Join the Community!</a>
+</body>
+</html>
