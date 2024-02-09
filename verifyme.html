@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Knight Bot - Logging In</title>
+<title>Knight Bot - Verifying</title>
 <style>
 body, html {
 margin: 0;
@@ -53,10 +53,13 @@ animation: spin 1s ease-in-out infinite;
 to { -webkit-transform: rotate(360deg); }
 }
 
-/* The bot invite section, initially hidden */
-.bot-invite-section {
+/* Verified text style */
+.verified-text {
 display: none;
+color: #fff;
+font-size: 2em;
 text-align: center;
+margin-top: 20px;
 }
 
 </style>
@@ -68,23 +71,9 @@ text-align: center;
 <div class="loading-text">Logging you in...</div>
 <div class="loader"></div>
 </div>
-</div>
-
-<!-- The bot invite section -->
-<div class="bot-invite-section" id="botInviteSection">
-<h1>Welcome to Knight Bot</h1>
-<p>Click below to add Knight Bot to your server.</p>
-<a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands"
-class="bot-invite-link">Invite Knight Bot</a>
+<div class="verified-text" id="verifiedText">Verified!</div>
 </div>
 
 <script>
+// Redirect to Discord OAuth2 after 3 seconds
 setTimeout(function() {
-// Hide the loader and show the bot invite section
-document.querySelector('.gradient-background').style.display = 'none';
-document.getElementById('botInviteSection').style.display = 'block';
-}, 3000);
-</script>
-
-</body>
-</html>
