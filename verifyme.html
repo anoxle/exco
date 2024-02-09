@@ -9,6 +9,7 @@ body, html {
 margin: 0;
 padding: 0;
 height: 100%;
+font-family: 'Arial', sans-serif;
 }
 
 .gradient-background {
@@ -33,7 +34,6 @@ text-align: center;
 
 .loading-text {
 color: #fff;
-font-family: 'Helvetica Neue', sans-serif;
 font-size: 2em;
 letter-spacing: 1px;
 margin-bottom: 10px;
@@ -52,6 +52,13 @@ animation: spin 1s ease-in-out infinite;
 @keyframes spin {
 to { -webkit-transform: rotate(360deg); }
 }
+
+/* The bot invite section, initially hidden */
+.bot-invite-section {
+display: none;
+text-align: center;
+}
+
 </style>
 </head>
 <body>
@@ -63,9 +70,19 @@ to { -webkit-transform: rotate(360deg); }
 </div>
 </div>
 
+<!-- The bot invite section -->
+<div class="bot-invite-section" id="botInviteSection">
+<h1>Welcome to Knight Bot</h1>
+<p>Click below to add Knight Bot to your server.</p>
+<a href="https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands"
+class="bot-invite-link">Invite Knight Bot</a>
+</div>
+
 <script>
 setTimeout(function() {
-window.location.href = "https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands";
+// Hide the loader and show the bot invite section
+document.querySelector('.gradient-background').style.display = 'none';
+document.getElementById('botInviteSection').style.display = 'block';
 }, 3000);
 </script>
 
