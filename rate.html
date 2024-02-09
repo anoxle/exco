@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate - Knight</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #f09462, #f28061, #f46d60, #f65a5e, #f8475c);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .rating-number {
+      font-size: 72px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .rating-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .rating-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .rating-button {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .rating-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .rating-button.active {
+      background-color: #2ECC71;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="rating-container">
+    <h1 class="rating-number">4.8</h1>
+    <p class="rating-text">(Based on 2,147 reviews)</p>
+    <div class="rating-buttons">
+      <button class="rating-button">1</button>
+      <button class="rating-button">2</button>
+      <button class="rating-button">3</button>
+      <button class="rating-button">4</button>
+      <button class="rating-button active">5</button>
+      <button class="rating-button">6</button>
+      <button class="rating-button">7</button>
+      <button class="rating-button">8</button>
+      <button class="rating-button">9</button>
+      <button class="rating-button">10</button>
+    </div>
+  </div>
+
+  <script>
+    const ratingButtons = document.querySelectorAll('.rating-button');
+
+    ratingButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedRating = button.innerText;
+        document.querySelector('.rating-number').innerText = selectedRating;
+        ratingButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
