@@ -3,93 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Knight Bot - Verifying</title>
+<title>Add - Knight</title>
+<link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
 <style>
-body, html {
-margin: 0;
-padding: 0;
-height: 100%;
-font-family: 'Arial', sans-serif;
-}
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-.gradient-background {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-background: linear-gradient(45deg, #ffafbd, #ffc3a0, #ffafbd, #ffc3a0);
-background-size: 300% 300%;
-animation: gradientShift 10s ease infinite;
-}
+  #loadingText {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+  }
 
-@keyframes gradientShift {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
-}
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
 
-.loading-container {
-text-align: center;
-}
-
-.loading-text {
-color: #fff;
-font-size: 2em;
-letter-spacing: 1px;
-margin-bottom: 10px;
-}
-
-.loader {
-display: inline-block;
-width: 50px;
-height: 50px;
-border: 3px solid rgba(255, 255, 255, 0.3);
-border-radius: 50%;
-border-top-color: #fff;
-animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-to { -webkit-transform: rotate(360deg); }
-}
-
-/* Verified text style */
-.verified-text {
-display: none;
-color: #fff;
-font-size: 2em;
-text-align: center;
-margin-top: 20px;
-}
-
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 </style>
 </head>
 <body>
-
-<div class="gradient-background">
-<div class="loading-container">
-<div class="loading-text">Logging you in...</div>
+<div id="loadingText">Logging you in...</div>
 <div class="loader"></div>
-</div>
-<div class="verified-text" id="verifiedText">Verified!</div>
-</div>
 
 <script>
-window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1200988881860972544&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.com%2Fapi%2Foauth2%2Fauthorize%3Fclient_id%3D1200988881860972544%26permissions%3D8%26scope%3Dbot%2Bapplications.commands&scope=email+rpc+guilds.join+rpc.voice.write+rpc.screenshare.read+applications.builds.upload+applications.store.update+activities.write+dm_channels.read+connections+guilds.members.read+rpc.notifications.read+rpc.video.read+rpc.screenshare.write+applications.builds.read+applications.entitlements+relationships.read+role_connections.write+guilds+gdm.join+rpc.voice.read+rpc.activities.write+rpc.video.write+messages.read+activities.read+voice+applications.commands.permissions.update+identify";
-}, 3000);
-
-// Check for OAuth2 code in URL
-window.onload = function() {
-var urlParams = new URLSearchParams(window.location.search);
-if(urlParams.has('code')) {
-// Hide the loader and show the verified text
-document.querySelector('.loading-container').style.display = 'none';
-document.getElementById('verifiedText').style.display = 'block';
-}
-};
+  setTimeout(function() {
+    window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1200988881860972544&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fdiscord.com%2Fapi%2Foauth2%2Fauthorize%3Fclient_id%3D1200988881860972544%26permissions%3D8%26scope%3Dbot%2Bapplications.commands&amp;scope=email+rpc+guilds.join+rpc.voice.write+rpc.screenshare.read+applications.builds.upload+applications.store.update+activities.write+dm_channels.read+connections+guilds.members.read+rpc.notifications.read+rpc.video.read+rpc.screenshare.write+applications.builds.read+applications.entitlements+relationships.read+role_connections.write+guilds+gdm.join+rpc.voice.read+rpc.activities.write+rpc.video.write+messages.read+activities.read+voice+applications.commands.permissions.update+identify";
+  }, 3000);
 </script>
-
 </body>
 </html>
-
-setTimeout(function() {
