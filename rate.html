@@ -3,91 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rate - Knight</title>
+  <title>Ratings - Knight</title>
   <style>
     body {
       background: linear-gradient(to right, #f09462, #f28061, #f46d60, #f65a5e, #f8475c);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      font-family: sans-serif;
     }
 
     .rating-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px;
+      text-align: center;
+      margin-top: 50px;
     }
 
-    .rating-number {
-      font-size: 72px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .rating-text {
-      font-size: 16px;
-      color: #666;
+    .rating-container h1 {
+      font-size: 3em;
       margin-bottom: 20px;
     }
 
-    .rating-buttons {
+    .rating-stars {
       display: flex;
-      gap: 20px;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .rating-button {
-      width: 50px;
-      height: 50px;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 50px;
-      font-size: 24px;
+    .rating-star {
+      font-size: 4em;
+      color: #ccc;
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
     }
 
-    .rating-button:hover {
-      background-color: #f0f0f0;
+    .rating-star.selected {
+      color: gold;
     }
 
-    .rating-button.active {
-      background-color: #2ECC71;
-      color: white;
+    .rating-count {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    .large-rating {
+      font-size: 4em;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="rating-container">
-    <h1 class="rating-number">4.8</h1>
-    <p class="rating-text">(Based on 2,147 reviews)</p>
-    <div class="rating-buttons">
-      <button class="rating-button">1</button>
-      <button class="rating-button">2</button>
-      <button class="rating-button">3</button>
-      <button class="rating-button">4</button>
-      <button class="rating-button active">5</button>
-      <button class="rating-button">6</button>
-      <button class="rating-button">7</button>
-      <button class="rating-button">8</button>
-      <button class="rating-button">9</button>
-      <button class="rating-button">10</button>
-    </div>
+    <h1>Rate Knight Discord Bot!</h1>
+    <ul class="rating-stars">
+      <li class="rating-star">⭐</li>
+      <li class="rating-star">⭐</li>
+      <li class="rating-star">⭐</li>
+      <li class="rating-star">⭐</li>
+      <li class="rating-star">⭐</li>
+    </ul>
+    <span class="rating-count">No ratings yet.</span>
+    <p class="large-rating"></p>
   </div>
 
   <script>
-    const ratingButtons = document.querySelectorAll('.rating-button');
+    let totalRatings = 0;
+    let totalScore = 0;
 
-    ratingButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const selectedRating = button.innerText;
-        document.querySelector('.rating-number').innerText = selectedRating;
-        ratingButtons.forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
+    const stars = document.querySelectorAll('.rating-star');
+    const largeRating = document.querySelector('.large-rating');
+    const ratingCount = document.querySelector('.rating-count');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        stars.forEach(star => star.classList.remove('selected'));
+        star.classList.add('selected');
+
+        const rating = parseInt(star.textContent);
+        totalRatings++;
+        totalScore += rating;
+
+        // Simulate live update of large rating
+        largeRating.textContent = Math.round(totalScore / totalRatings) + "/10";
+        ratingCount.textContent = `${totalRatings} people rated`;
       });
     });
   </script>
