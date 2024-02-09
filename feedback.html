@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback - Knight</title>
-  <style>
-    /* Add your own background image style here */
-    body {
-      background-image: url("path/to/your/image.jpg");
-      background-size: cover;
-      background-position: center;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Feedback</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('your_background_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        #feedback-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #feedback-text {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        #warning-text {
+            margin-top: 10px;
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        #char-limit {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        #submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        #feedback-submitted {
+            display: none;
+            margin-top: 20px;
+            color: #2ecc71;
+        }
+    </style>
 </head>
 <body>
-  <div class="feedback-box">
-    <h1>Send Feedback</h1>
-    <textarea id="feedback-text" maxlength="3000"></textarea>
-    <p id="char-count">0/3000</p>
-    <p>Warning: Do not troll. Please provide real feedback.</p>
-    <button id="submit-button">Submit</button>
-  </div>
-  <div id="success-message"></div>
+    <div id="feedback-box">
+        <h2>Send Feedback</h2>
+        <textarea id="feedback-text" placeholder="Type your feedback here"></textarea>
+        <p id="warning-text">Warning: Do not troll. Please provide real feedback.</p>
+        <p id="char-limit">0/3000</p>
+        <button id="submit-button" onclick="submitFeedback()">Submit</button>
+        <p id="feedback-submitted">Feedback submitted! Thanks.</p>
+    </div>
 
-  <script>
-    // Your JavaScript code goes here
-  </script>
+    <script>
+        document.getElementById('feedback-text').addEventListener('input', function() {
+            var charCount = this.value.length;
+            document.getElementById('char-limit').innerText = charCount + '/3000';
+        });
+
+        function submitFeedback() {
+            var feedbackText = document.getElementById('feedback-text').value;
+            if (feedbackText.trim() !== '') {
+                // You can use JavaScript to send the feedback to your email or server.
+                // For simplicity, I'm just showing the "Feedback submitted" message.
+                document.getElementById('feedback-box').style.display = 'none';
+                document.getElementById('feedback-submitted').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
