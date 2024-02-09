@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add - Knight</title>
+<link rel="icon" href="https://cdn.discordapp.com/avatars/1200988881860972544/cb7daeea7ad27f3504bd379fb18fac88.webp?size=4096" type="image/x-icon">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  #loadingText {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+<div id="loadingText">Logging you in...</div>
+<div class="loader"></div>
+
+<script>
+  setTimeout(function() {
+    window.location.href = "https://discord.com/oauth2/authorize?client_id=1200988881860972544&permissions=8&scope=bot+applications.commands";
+  }, 3000);
+</script>
+</body>
+</html>
