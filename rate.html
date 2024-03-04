@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rate Online - ChattoWide</title>
+  <title>Rate Online World-Wide</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -60,9 +60,9 @@
 </div>
 
 <script>
-  // Initial ratings and total
-  let rating = 0;
-  let totalPoints = 0;
+  // Check if there's a saved rating in localStorage
+  let rating = parseInt(localStorage.getItem('rating')) || 0;
+  let totalPoints = parseInt(localStorage.getItem('totalPoints')) || 0;
 
   // Function to handle rating click
   function rate(stars) {
@@ -70,6 +70,9 @@
       rating = stars;
       totalPoints += stars;
       updateDisplay();
+      // Save rating to localStorage
+      localStorage.setItem('rating', rating);
+      localStorage.setItem('totalPoints', totalPoints);
     }
   }
 
@@ -87,6 +90,9 @@
       totalPoints = totalPoints - rating + newRating;
       rating = newRating;
       updateDisplay();
+      // Save updated rating to localStorage
+      localStorage.setItem('rating', rating);
+      localStorage.setItem('totalPoints', totalPoints);
     }
   }
 </script>
