@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Added - Chatto</title>
+<link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  #message {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+</style>
+</head>
+<body>
+<div id="message">
+  <p>Added Chatto to <span id="serverName"></span></p>
+  <p>You may close this window.</p>
+</div>
+
+<script>
+  // Function to extract server name from URL parameters
+  function getServerName() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serverName = urlParams.get('server');
+    return serverName;
+  }
+
+  // Display the server name in the message
+  const server = getServerName();
+  document.getElementById('serverName').innerText = server || 'the server';
+</script>
+</body>
+</html>
