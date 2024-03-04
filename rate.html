@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate Online - ChattoWide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #rating-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .star {
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    #rating-value {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    #change-dropdown {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Rate Online World-Wide</h1>
+
+<div id="rating-container">
+  <!-- Five star icons for rating -->
+  <span class="star" onclick="rate(1)">★</span>
+  <span class="star" onclick="rate(2)">★</span>
+  <span class="star" onclick="rate(3)">★</span>
+  <span class="star" onclick="rate(4)">★</span>
+  <span class="star" onclick="rate(5)">★</span>
+</div>
+
+<div id="rating-value">Total Points: <span id="total-points">0</span></div>
+
+<div id="change-dropdown">
+  <button onclick="changeRating()">Change</button>
+  <select id="rating-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+</div>
+
+<script>
+  // Initial ratings and total
+  let rating = 0;
+  let totalPoints = 0;
+
+  // Function to handle rating click
+  function rate(stars) {
+    if (rating === 0) {
+      rating = stars;
+      totalPoints += stars;
+      updateDisplay();
+    }
+  }
+
+  // Function to update display
+  function updateDisplay() {
+    document.getElementById('total-points').innerText = totalPoints;
+  }
+
+  // Function to handle rating change
+  function changeRating() {
+    const selectElement = document.getElementById('rating-select');
+    const newRating = parseInt(selectElement.value);
+
+    if (newRating !== rating) {
+      totalPoints = totalPoints - rating + newRating;
+      rating = newRating;
+      updateDisplay();
+    }
+  }
+</script>
+
+</body>
+</html>
