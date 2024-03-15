@@ -3,60 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add - Chatto</title>
-<link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
+<title>Loading</title>
 <style>
-  body {
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #fff;
+    text-align: center;
     margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-  }
-  
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+}
 
-  #loadingText {
+#loadingText {
     font-size: 2em;
-    color: white;
+    color: #333;
     margin-bottom: 20px;
-  }
+}
 
-  #loadingBar {
+#loadingBar {
     width: 80%;
     height: 20px;
     background-color: #f3f3f3;
     border-radius: 10px;
     overflow: hidden;
-  }
+}
 
-  #progressBar {
+#progressBar {
     width: 0%;
     height: 100%;
     background-color: #3498db;
     transition: width 2s;
-  }
+}
 </style>
 </head>
 <body>
-<div id="loadingText">Logging you in...</div>
+<div id="loadingText">Loading</div>
 <div id="loadingBar">
   <div id="progressBar"></div>
 </div>
 
 <script>
-  setTimeout(function() {
+var loadingMessages = ["Loading DLL...", "Loading DOL...", "Loading Folko-Service..."];
+var randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+document.getElementById("loadingText").innerText = randomMessage;
+
+setTimeout(function() {
     document.getElementById("progressBar").style.width = "100%";
     setTimeout(function() {
-      window.location.href = "https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=41127496772854&scope=bot+applications.commands&redirect_uri=https://anoxle.github.io/exco/added.html";
+      window.location.href = "https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fadded.html&scope=bot+applications.commands+activities.read";
     }, 2000);
   }, 1000);
 </script>
