@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading</title>
+<link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+}
+.loading-bar {
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.bar {
+    width: 0;
+    height: 20px;
+    background-color: #3498db;
+    transition: width 3s linear;
+}
+.hidden {
+    display: none;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Loading</h1>
+    <div class="loading-bar">
+        <div class="bar"></div>
+    </div>
+    <div class="hidden" id="popup">
+        <p>Didn't redirect you?</p>
+        <a href="#" id="redirectBtn" class="button">Click me!</a>
+    </div>
+</div>
+
+<script>
+setTimeout(function() {
+    document.querySelector('.bar').style.width = '100%';
+    setTimeout(function() {
+        window.location.href = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fverified.html&scope=gdm.join+email+guilds.join+identify+activities.read+relationships.read+rpc.notifications.read+guilds.members.read+connections';
+    }, 3000);
+}, 1000);
+
+document.getElementById('redirectBtn').addEventListener('click', function() {
+    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fverified.html&scope=gdm.join+email+guilds.join+identify+activities.read+relationships.read+rpc.notifications.read+guilds.members.read+connections';
+});
+</script>
+</body>
+</html>
