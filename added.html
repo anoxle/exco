@@ -1,97 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Added - Chatto</title>
-  <link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Added - Chatto</title>
+<link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  p {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: glow 2s ease-in-out infinite alternate;
+  }
 
-    #message {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 20px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
-      position: relative;
-      overflow: hidden;
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(0,0,255,0.8);
     }
+    to {
+      box-shadow: 0 0 20px rgba(0,0,255,0.8);
+    }
+  }
 
-    #message::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      box-shadow: 0 0 20px 10px #23d5ab, inset 0 0 20px 10px #23d5ab;
-      z-index: -1;
-      border-radius: 5px;
-    }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
 
-    .button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #2980b9;
-    }
-  </style>
+  .button:hover {
+    background-color: #2980b9;
+  }
+</style>
 </head>
 <body>
-  <div id="message">
-    <p>Added Chatto to <span id="serverName"></span></p>
-    <p>You may close this window.</p>
-  </div>
+<p>Congrats 🎉<br>You added me to a server!</p>
 
-  <div class="button-container">
-    <a href="https://anoxle.github.io/exco/rate" class="button" target="_blank">RATE</a>
-    <a href="https://discord.gg/j7vhM7r7cE" class="button" target="_blank">DISCORD SERVER</a>
-  </div>
+<div class="button-container">
+  <a href="https://anoxle.github.io/exco/rate" class="button" target="_blank">RATE</a>
+  <a href="https://discord.gg/j7vhM7r7cE" class="button" target="_blank">DISCORD SERVER</a>
+</div>
 
-  <script>
-    // Function to extract server name from URL parameters
-    function getServerName() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const serverName = urlParams.get('server');
-      return serverName;
-    }
-
-    // Display the server name in the message
-    const server = getServerName();
-    document.getElementById('serverName').innerText = server || 'the server';
-  </script>
+<a href="javascript:window.close();" class="button" style="background-color: #e74c3c;">Close tab</a>
 </body>
 </html>
