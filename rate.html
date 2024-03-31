@@ -1,101 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rate Online World-Wide</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Closure</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-
-    #rating-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
+    to {
+      opacity: 1;
     }
-
-    .star {
-      cursor: pointer;
-      font-size: 24px;
+  }
+  h1 {
+    color: red;
+    font-size: 24px;
+  }
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideIn 1s ease forwards;
+  }
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
     }
-
-    #rating-value {
-      font-size: 20px;
-      margin-top: 10px;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    #change-dropdown {
-      margin-top: 10px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
+  <h1>This site has been closed since March 31, 2024!</h1>
+  <a href="https://anoxle.github.io/folko/" class="btn">Go back to home-page</a>
 
-<h1>Rate Online World-Wide</h1>
-
-<div id="rating-container">
-  <!-- Five star icons for rating -->
-  <span class="star" onclick="rate(1)">★</span>
-  <span class="star" onclick="rate(2)">★</span>
-  <span class="star" onclick="rate(3)">★</span>
-  <span class="star" onclick="rate(4)">★</span>
-  <span class="star" onclick="rate(5)">★</span>
-</div>
-
-<div id="rating-value">Total Points: <span id="total-points">0</span></div>
-
-<div id="change-dropdown">
-  <button onclick="changeRating()">Change</button>
-  <select id="rating-select">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-</div>
-
-<script>
-  // Check if there's a saved rating in localStorage
-  let rating = parseInt(localStorage.getItem('rating')) || 0;
-  let totalPoints = parseInt(localStorage.getItem('totalPoints')) || 0;
-
-  // Function to handle rating click
-  function rate(stars) {
-    if (rating === 0) {
-      rating = stars;
-      totalPoints += stars;
-      updateDisplay();
-      // Save rating to localStorage
-      localStorage.setItem('rating', rating);
-      localStorage.setItem('totalPoints', totalPoints);
+  <script>
+    window.onload = function() {
+      document.body.style.opacity = 1;
     }
-  }
-
-  // Function to update display
-  function updateDisplay() {
-    document.getElementById('total-points').innerText = totalPoints;
-  }
-
-  // Function to handle rating change
-  function changeRating() {
-    const selectElement = document.getElementById('rating-select');
-    const newRating = parseInt(selectElement.value);
-
-    if (newRating !== rating) {
-      totalPoints = totalPoints - rating + newRating;
-      rating = newRating;
-      updateDisplay();
-      // Save updated rating to localStorage
-      localStorage.setItem('rating', rating);
-      localStorage.setItem('totalPoints', totalPoints);
-    }
-  }
-</script>
-
+  </script>
 </body>
 </html>
