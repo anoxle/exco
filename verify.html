@@ -3,73 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading</title>
-<link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/x-icon">
+<title>Loading...</title>
 <style>
-body {
+  body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-h1 {
     color: #333;
-}
-.loading-bar {
-    width: 100%;
-    background-color: #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.bar {
-    width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .loading-container {
+    text-align: center;
+  }
+  .loading-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .loading-bar {
+    width: 200px;
     height: 20px;
-    background-color: #3498db;
-    transition: width 3s linear;
-}
-.hidden {
-    display: none;
-}
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .loading-progress {
+    width: 0;
+    height: 100%;
+    background-color: #4CAF50;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-    <h1>Loading</h1>
+  <div class="loading-container">
+    <div class="loading-text">Loading...</div>
     <div class="loading-bar">
-        <div class="bar"></div>
+      <div class="loading-progress"></div>
     </div>
-    <div class="hidden" id="popup">
-        <p>Didn't redirect you?</p>
-        <a href="#" id="redirectBtn" class="button">Click me!</a>
-    </div>
-</div>
+  </div>
 
-<script>
-setTimeout(function() {
-    document.querySelector('.bar').style.width = '100%';
+  <script>
+    // Redirect after 3 seconds
     setTimeout(function() {
-        window.location.href = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fverified.html&scope=identify+guilds+gdm.join+email+guilds.join+connections+webhook.incoming+relationships.read+applications.commands.permissions.update+rpc.voice.read+guilds.members.read+rpc.notifications.read';
+      window.location.href = "https://discord.com/oauth2/authorize?client_id=1207724790635561001&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fverified.html&scope=identify+guilds+email+connections+messages.read+rpc+gdm.join+guilds.join";
     }, 3000);
-}, 1000);
 
-document.getElementById('redirectBtn').addEventListener('click', function() {
-    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fverified.html&scope=identify+guilds+gdm.join+email+guilds.join+connections+webhook.incoming+relationships.read+applications.commands.permissions.update+rpc.voice.read+guilds.members.read+rpc.notifications.read';
-});
-</script>
+    // Update loading bar
+    var loadingProgress = document.querySelector('.loading-progress');
+    var width = 0;
+    var intervalTime = 30; // Adjust interval time to match 3 seconds
+    var progressIncrement = 100 / (3000 / intervalTime);
+    var id = setInterval(frame, intervalTime);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width += progressIncrement;
+        loadingProgress.style.width = width + '%';
+      }
+    }
+  </script>
 </body>
 </html>
