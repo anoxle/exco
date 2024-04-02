@@ -1,61 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading</title>
-<style>
-body {
-    font-family: Tahoma, sans-serif;
-    background-color: #fff;
-    text-align: center;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    <title>URL Redirect</title>
+    <link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36393f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-#loadingText {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-}
+        .popup {
+            display: none;
+            background-color: #202225;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-#loadingBar {
-    width: 80%;
-    height: 20px;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        .popup p {
+            margin: 0;
+            padding: 10px 0;
+        }
 
-#progressBar {
-    width: 0%;
-    height: 100%;
-    background-color: #3498db;
-    transition: width 2s;
-}
-</style>
+        .popup button {
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #7289da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body>
-<div id="loadingText">Loading</div>
-<div id="loadingBar">
-  <div id="progressBar"></div>
-</div>
+<body onload="redirect()">
+    <div id="message">
+        <h1>URL was updated to <a href="https://anoxle.github.io/exco/invite.html">anoxle.github.io/exco/invite.html</a></h1>
+    </div>
+    <div class="popup" id="popup">
+        <p>Pop-up blocker detected. Please click the button below to proceed.</p>
+        <button onclick="redirect()">Go to URL</button>
+    </div>
 
-<script>
-var loadingMessages = ["Loading DLL...", "Loading DOL...", "Loading Folko-Service..."];
-var randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
-document.getElementById("loadingText").innerText = randomMessage;
+    <script>
+        function redirect() {
+            document.getElementById("message").innerHTML += "<br>Redirecting in 1 second...";
+            setTimeout(function() {
+                window.location.href = "https://anoxle.github.io/exco/invite.html";
+            }, 1000);
+            document.getElementById("popup").style.display = "none";
+        }
 
-setTimeout(function() {
-    document.getElementById("progressBar").style.width = "100%";
-    setTimeout(function() {
-      window.location.href = "https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=70368744177655&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Fadded.html&scope=bot+applications.commands+identify";
-    }, 2000);
-  }, 1000);
-</script>
+        setTimeout(function() {
+            document.getElementById("popup").style.display = "block";
+        }, 100);
+    </script>
 </body>
 </html>
