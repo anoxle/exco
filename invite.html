@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>invite - Chatto</title>
+  <meta name="author" content="Folko-Bots">
+  <meta name="description" content="Invite Chatto to your server *FREE*">
+  <title>Chatto | Invite</title>
   <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
   <style>
     body {
@@ -130,13 +132,22 @@
       <img src="https://anoxle.github.io/exco/logo2.png" alt="Icon" class="icon">
       <h1>Chatto</h1>
       <div class="bold-text">Choose Permissions</div>
-      <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands" class="button">NORMAL</a>
+      <button class="button" onclick="loadUrl('https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands')">NORMAL</button>
       <div class="button-container">
-        <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot" class="button">ADMINISTRATOR</a>
+        <button class="button" onclick="loadUrl('https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot')">ADMINISTRATOR</button>
         <span class="recommendation-message">Normal is recommended for all users!</span>
       </div>
       <p>Choose which permissions you would like to invite the client with</p>
+      <iframe id="iframe" style="display:none;"></iframe>
     </div>
   </div>
+  
+  <script>
+    function loadUrl(url) {
+      var iframe = document.getElementById('iframe');
+      iframe.src = url;
+      iframe.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
