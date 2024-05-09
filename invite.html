@@ -25,6 +25,16 @@
       position: relative;
     }
 
+    .normal-recommendation {
+      color: #ff0000;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #202225;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
     .black-box {
       background-color: #202225;
       border-radius: 8px;
@@ -83,28 +93,6 @@
       position: relative;
     }
 
-    .recommendation-message {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .button-container:hover .recommendation-message {
-      opacity: 1;
-    }
-
-    .recommendation-message:hover {
-      animation: pulse 1s infinite alternate;
-    }
-
     @keyframes pulse {
       from {
         transform: scale(1);
@@ -128,6 +116,7 @@
 </head>
 <body>
   <div class="container">
+    <div class="normal-recommendation">Normal is recommended</div>
     <div class="black-box">
       <img src="https://anoxle.github.io/exco/logo2.png" alt="Icon" class="icon">
       <h1>Chatto</h1>
@@ -135,7 +124,6 @@
       <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands" class="button">NORMAL</a>
       <div class="button-container">
         <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot" class="button">ADMINISTRATOR</a>
-        <span class="recommendation-message">Normal is recommended for all users!</span>
       </div>
       <p>Choose which permissions you would like to invite the client with</p>
     </div>
