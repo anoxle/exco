@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restricted to Invite Page</title>
+  <style>
+    body {
+      background-color: #36393f;
+      color: #dcddde;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .message {
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #2f3136;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #7289da;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #677bc4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">
+      <h1>Restricting you to the Invite Page</h1>
+      <p>You are currently being restricted to the following page:</p>
+      <a href="https://anoxle.github.io/exco/invite">https://anoxle.github.io/exco/invite</a>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      if (window.location.href !== 'https://anoxle.github.io/exco/invite') {
+        window.location.href = 'https://anoxle.github.io/exco/invite';
+      }
+    };
+  </script>
+</body>
+</html>
