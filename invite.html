@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Fasver">
   <meta name="description" content="AI-Powered Discord bot (FREE)">
-  <title>Chatto</title>
+  <title>Chatto - AI-Powered</title>
   <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
   <style>
     body {
@@ -18,6 +18,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      animation: fadeIn 0.5s ease;
     }
 
     .container {
@@ -33,6 +34,7 @@
       background-color: #202225;
       border-radius: 5px;
       display: inline-block;
+      animation: fadeIn 0.5s ease;
     }
 
     .black-box {
@@ -43,6 +45,7 @@
       margin: auto;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       position: relative;
+      animation: scaleIn 0.5s ease;
     }
 
     h1 {
@@ -50,7 +53,7 @@
       margin-bottom: 20px;
       color: #fff;
       font-weight: 500;
-      animation: slideIn 0.5s ease;
+      animation: fadeIn 0.5s ease;
     }
 
     .icon {
@@ -58,6 +61,7 @@
       height: 100px;
       margin-bottom: 10px;
       border-radius: 50%;
+      animation: rotateIn 0.5s ease;
     }
 
     .bold-text {
@@ -65,11 +69,13 @@
       margin-bottom: 10px;
       font-size: 18px;
       color: #fff;
+      animation: fadeIn 0.5s ease;
     }
 
     p {
       color: #b9bbbe;
       margin-bottom: 15px;
+      animation: fadeIn 0.5s ease;
     }
 
     .button {
@@ -84,6 +90,7 @@
       display: inline-block;
       text-decoration: none;
       font-weight: bold;
+      animation: fadeIn 0.5s ease;
     }
 
     .button:hover {
@@ -100,6 +107,7 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      animation: fadeIn 0.5s ease;
     }
 
     .checkbox-container input[type="checkbox"] {
@@ -143,6 +151,37 @@
       font-size: 16px;
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotateIn {
+      from {
+        transform: rotate(-360deg);
+        opacity: 0;
+      }
+      to {
+        transform: rotate(0deg);
+        opacity: 1;
+      }
+    }
+
     @keyframes checkmark {
       0% {
         transform: scale(0.5);
@@ -152,17 +191,6 @@
       }
       100% {
         transform: scale(1);
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
       }
     }
   </style>
