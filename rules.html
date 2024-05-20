@@ -1,82 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chatto Rules</title>
-	<link rel="shortcut icon" href="https://anoxle.github.io/exco/logo2.png" type="image/png">
-	<meta name="theme-color" content="#3b536b">
-	<style>
-		body {
-			background-color: #2b2b2b;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			color: #ddd;
-			transition: background-color 0.3s ease;
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatto - Rules</title>
+  <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
+  <style>
+    body {
+      font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #36393f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
 
-		.container {
-			max-width: 800px;
-			margin: 40px auto;
-		padding: 20px;
-			background-color: #36393f;
-			border: 1px solid #444;
-			border-radius: 5px;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		}
+    .rules-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #202225;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      animation: fadeIn 0.5s ease;
+    }
 
-		.title {
-			font-size: 2.5em;
-			margin-top: 0;
-			margin-bottom: 0.2em;
-			text-align: center;
-		}
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      animation: fadeIn 0.5s ease;
+    }
 
-		.subtitle {
-			font-size: 1.2em;
-			margin-top: 0;
-			margin-bottom: 1em;
-			text-align: center;
-		}
+    .rules-section {
+      animation: fadeIn 0.7s ease;
+    }
 
-		hr {
-			border: 0;
-			height: 1px;
-			background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
-			margin: 20px 0;
-		}
+    .rules-section h2 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-		.rules-list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
+    .rules-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-		.rules-list li {
-			margin-bottom: 10px;
-		}
+    .rules-section li {
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
 
-		.rules-list li:before {
-			content: "\2022";
-			color: #666;
-			font-size: 1.2em;
-			margin-right: 10px;
-		}
-	</style>
+    .rules-section li a {
+      color: #7289da;
+      text-decoration: none;
+    }
+
+    .rules-section li a:hover {
+      text-decoration: underline;
+    }
+
+    .invite-button {
+      background-color: #7289da;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin: 20px auto 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .invite-button:hover {
+      background-color: #677bc4;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<h1 class="title">Welcome to Chatto Rules!</h1>
-		<p class="subtitle">By using Chatto % it's AI, you agree to the following rules:</p>
-		<hr>
-		<ul class="rules-list">
-			<li>Do not use Chatto for any illegal activities or to violate any laws or regulations.</li>
-			<li>Do not use Chatto to harm or threaten others, including but not limited to, harassment, bullying, or stalking.</li>
-			<li>Do not use Chatto to distribute spam, unsolicited messages, or unwanted content.</li>
-			<li>Do not use Chatto to impersonate or deceive others, including but not limited to, pretending to be a staff member or another user.</li>
-			<li>Do not use Chatto to exploit or manipulate Discord's API or any of its features in a way that is not intended by Discord.</li>
-			<li>Do not use Chatto to interfere with or disrupt Discord's servers or networks.</li>
-			<li>Do not use Chatto to violate Discord's Terms of Service or Community Guidelines.</li>
-		</ul>
-	</div>
+  <div class="rules-container">
+    <img src="https://anoxle.github.io/exco/logo2.png" alt="Chatto Logo" class="logo">
+    <div class="rules-section">
+      <h2>Chatto - Rules</h2>
+      <ul>
+        <li>Don't use Chatto nor it's AI to do illegal stuff</li>
+        <li>Don't use Chatto nor it's AI to bypass server rules</li>
+        <li>Don't use Chatto nor it's AI to break Discord's <a href="https://discord.com/terms" target="_blank">Terms</a> Or <a href="https://discord.com/guidelines" target="_blank">Community guidelines</a></li>
+        <li>Don't use Chatto nor it's AI to spam or harass others</li>
+        <li>Don't use Chatto nor it's AI to impersonate others or spread misinformation</li>
+      </ul>
+    </div>
+    <a href="https://anoxle.github.io/exco/invite.html" class="invite-button">Invite Chatto</a>
+  </div>
 </body>
 </html>
