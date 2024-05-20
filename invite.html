@@ -7,6 +7,7 @@
   <meta name="description" content="AI-Powered Discord bot (FREE)">
   <title>Chatto - AI-Powered</title>
   <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
+</head>
   <style>
     body {
       margin: 0;
@@ -151,6 +152,73 @@
       font-size: 16px;
     }
 
+    .recommended-bots {
+      background-color: #202225;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 400px;
+      margin: 20px auto 0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: scaleIn 0.5s ease;
+    }
+
+    .recommended-bots h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .recommended-bots .dropdown {
+      display: none;
+      margin-top: 10px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .recommended-bots .dropdown p {
+      color: #b9bbbe;
+      margin-bottom: 10px;
+    }
+
+    .recommended-bots .dropdown .bot-name {
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .recommended-bots .dropdown .tools {
+      font-weight: bold;
+    }
+
+    .recommended-bots .dropdown .tool {
+      color: #b9bbbe;
+      display: block;
+      padding: 2px 0;
+    }
+
+    .recommended-bots .dropdown .tool:hover {
+      color: #fff;
+    }
+
+    .recommended-bots .dropdown .website-button {
+      background-color: #7289da;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .recommended-bots .dropdown .website-button:hover {
+      background-color: #677bc4;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -193,62 +261,7 @@
         transform: scale(1);
       }
     }
-    .recommended-bots {
-      background-color: #202225;
-      border-radius: 8px;
-      padding: 20px;
-      max-width: 400px;
-      margin: 20px auto 0;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      position: relative;
-      animation: scaleIn 0.5s ease;
-    }
-
-    .recommended-bots h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #fff;
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    .recommended-bots .dropdown {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .recommended-bots .dropdown a {
-      color: #b9bbbe;
-      display: block;
-      padding: 5px 0;
-      text-decoration: none;
-    }
-
-    .recommended-bots .dropdown a:hover {
-      color: #fff;
-    }
-
-    .recommended-bots .dropdown p {
-      color: #b9bbbe;
-      margin-bottom: 10px;
-    }
-
-    .recommended-bots .dropdown .website-button {
-      background-color: #7289da;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .recommended-bots .dropdown .website-button:hover {
-      background-color: #677bc4;
-    }
   </style>
-</head>
 <body>
   <div class="container">
     <div class="normal-recommendation">Normal is recommended</div>
@@ -265,13 +278,13 @@
       <p>Choose which permissions you would like to invite the client with</p>
     </div>
     <div class="recommended-bots">
-      <h2>Recommended Bots ></h2>
+      <h2>Recommended Bots</h2>
       <div class="dropdown">
-        <a href="#">!Carl-Bot!</a>
-        <a href="#">1.Moderation</a>
-        <a href="#">2.ReactionRole</a>
-        <a href="#">3.And much more!</a>
-        <p>The perfect bot for your servers!</p>
+        <p class="bot-name">Carl-Bot</p>
+        <p class="tools">Tools:</p>
+        <a href="#" class="tool">1 | Moderation Tools</a>
+        <a href="#" class="tool">2 | Auto ReactionRole</a>
+        <a href="#" class="tool">3 | Many more!</a>
         <a href="https://carl.gg" class="website-button" target="_blank">Website</a>
       </div>
     </div>
@@ -300,8 +313,10 @@
       }
     });
 
+    let isDropdownOpen = false;
     recommendedBotsHeader.addEventListener('click', () => {
-      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+      isDropdownOpen = !isDropdownOpen;
+      dropdown.style.display = isDropdownOpen ? 'block' : 'none';
     });
   </script>
 </body>
