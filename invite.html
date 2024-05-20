@@ -89,27 +89,68 @@
       background-color: #677bc4;
     }
 
-    .button-container {
-      position: relative;
+    .button.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
-    @keyframes pulse {
-      from {
+    .checkbox-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #7289da;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkbox-container input[type="checkbox"]:checked {
+      background-color: #7289da;
+      animation: checkmark 0.3s ease;
+    }
+
+    .checkbox-container input[type="checkbox"]:checked::before {
+      content: "✓";
+      display: block;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .checkbox-container label {
+      color: #b9bbbe;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .checkbox-container label a {
+      color: #b9bbbe;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    @keyframes checkmark {
+      0% {
+        transform: scale(0.5);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
         transform: scale(1);
-      }
-      to {
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
       }
     }
   </style>
@@ -121,12 +162,31 @@
       <img src="https://anoxle.github.io/exco/logo2.png" alt="Icon" class="icon">
       <h1>Chatto</h1>
       <div class="bold-text">Choose Permissions</div>
-      <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands" class="button">NORMAL</a>
+      <div class="checkbox-container">
+        <input type="checkbox" id="agree-checkbox" name="agree-checkbox">
+        <label for="agree-checkbox">I agree to the <a href="https://anoxle.github.io/exco/rules" target="_blank">rules</a></label>
+      </div>
+      <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands" class="button disabled" id="normal-button">NORMAL</a>
       <div class="button-container">
-        <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot" class="button">ADMINISTRATOR</a>
+        <a href="https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot" class="button disabled" id="admin-button">ADMINISTRATOR</a>
       </div>
       <p>Choose which permissions you would like to invite the client with</p>
     </div>
   </div>
+  <script>
+    const normalButton = document.getElementById('normal-button');
+    const adminButton = document.getElementById('admin-button');
+    const agreeCheckbox = document.getElementById('agree-checkbox');
+
+    agreeCheckbox.addEventListener('change', () => {
+      if (agreeCheckbox.checked) {
+        normalButton.classList.remove('disabled');
+        adminButton.classList.remove('disabled');
+      } else {
+        normalButton.classList.add('disabled');
+        adminButton.classList.add('disabled');
+      }
+    });
+  </script>
 </body>
 </html>
