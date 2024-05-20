@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Fasver">
+  <meta name="description" content="Chatto Support Server">
+    <title>Chatto | Support</title>
+    <link rel="icon" href="https://anoxle.github.io/exco/logo2.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36393f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .popup {
+            display: none;
+            background-color: #202225;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #7289da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body onload="redirect()">
+    <div id="message">
+        <h1>Sending you to <a href="https://discord.gg/j7vhM7r7cE">https://discord.gg/j7vhM7r7cE</a></h1>
+    </div>
+    <div class="popup" id="popup">
+        <p>Pop-up blocker detected. Please click the button below to proceed.</p>
+        <button onclick="redirect()">Go to URL</button>
+    </div>
+
+    <script>
+        function redirect() {
+            document.getElementById("message").innerHTML += "<br>Redirecting in 1 second...";
+            setTimeout(function() {
+                window.location.href = "https://discord.gg/j7vhM7r7cE";
+            }, 1000);
+            document.getElementById("popup").style.display = "none";
+        }
+
+        setTimeout(function() {
+            document.getElementById("popup").style.display = "block";
+        }, 100);
+    </script>
+</body>
+</html>
