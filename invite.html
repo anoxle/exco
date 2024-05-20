@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Fasver">
-  <meta name="description" content="AI-Powered Discord bot (FREE)" color="#3b536b">
-  <title>Chatto - Your AI-Powered DiscordBot</title>
+  <meta name="description" content="AI-Powered Discord bot (FREE)">
+  <title>Chatto</title>
   <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
   <style>
     body {
@@ -50,6 +50,7 @@
       margin-bottom: 20px;
       color: #fff;
       font-weight: 500;
+      animation: slideIn 0.5s ease;
     }
 
     .icon {
@@ -153,6 +154,17 @@
         transform: scale(1);
       }
     }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -160,7 +172,7 @@
     <div class="normal-recommendation">Normal is recommended</div>
     <div class="black-box">
       <img src="https://anoxle.github.io/exco/logo2.png" alt="Icon" class="icon">
-      <h1>Chatto - Your AI-Powered DiscordBot</h1>
+      <h1>Chatto</h1>
       <div class="bold-text">Choose Permissions</div>
       <div class="checkbox-container">
         <input type="checkbox" id="agree-checkbox" name="agree-checkbox">
