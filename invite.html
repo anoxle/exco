@@ -278,14 +278,15 @@
       <p>Choose which permissions you would like to invite the client with</p>
     </div>
     <div class="recommended-bots">
-      <h2>Recommended Bots</h2>
+      <h2>Quick-Invite</h2>
       <div class="dropdown">
         <p class="bot-name">Carl-Bot</p>
         <p class="tools">Tools:</p>
         <a href="#" class="tool">1 | Moderation Tools</a>
         <a href="#" class="tool">2 | Auto ReactionRole</a>
-        <a href="#" class="tool">3 | Many more!</a>
-        <a href="https://carl.gg" class="website-button" target="_blank">Website</a>
+        <a href="#" class="tool">3 | Much more! add it today</a>
+        <a href="https://carl.gg" class="website-button" target="_blank">Carl-Bot (AD)</a>
+        <a href="https://anoxle.github.io/exco/quickinvite" class="website-button" target="_blank">QuickInvite</a>
       </div>
     </div>
   </div>
@@ -296,8 +297,8 @@
     const recommendedBotsHeader = document.querySelector('.recommended-bots h2');
     const dropdown = document.querySelector('.recommended-bots .dropdown');
 
-    const normalButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=1518167653623&scope=bot+applications.commands';
-    const adminButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&scope=applications.commands+bot';
+    const normalButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=573266428689655&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Finvited.html&scope=identify+email+bot+applications.commands';
+    const adminButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Finvited.html&scope=identify+email+applications.commands+bot';
 
     agreeCheckbox.addEventListener('change', () => {
       if (agreeCheckbox.checked) {
