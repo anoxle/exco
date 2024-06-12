@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatto | Your Versatile AI Companion</title>
+  <link rel="icon" href="https://anoxle.github.io/exco/icon.png">
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #333333);
+  animation: loopy 10s ease-in-out infinite;
+}
+
+@keyframes loopy {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.logo-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: logo-up 1s ease-in-out;
+}
+
+@keyframes logo-up {
+  0% {
+    transform: translate(-50%, 100%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.text-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: text-fade-in 1s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-text {
+  font-size: 4rem;
+  margin: 0;
+  animation: text-grow 1s ease-in-out;
+}
+
+@keyframes text-grow {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 4rem;
+  }
+}
+
+.sub-text {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.button-container {
+  margin-top: 2rem;
+  animation: button-slide-up 1s ease-in-out 1s forwards;
+  transform: translateY(100%);
+}
+
+@keyframes button-slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dashboard-button,
+.invite-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  animation: button-scale 0.5s ease-in-out;
+}
+
+@keyframes button-scale {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dashboard-button:hover,
+.invite-button:hover {
+  background-color: #444;
+}
+
+.features-container {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.features-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 2rem;
+}
+
+.feature-image {
+  width: 494px;
+  height: 164px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: glow 2s ease-in-out infinite;
+}
+
+.feature-text {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.feature-title {
+  font-size: 4rem;
+  margin-top: 0;
+}
+
+.feature-description {
+  font-size: 1.5rem;
+}
+
+.feature-beta {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.features-container:nth-of-type(2) {
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.features-container:nth-of-type(3) {
+  background: linear-gradient(to bottom, #333333, #1a1a1a);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.features-container:nth-of-type(4) {
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.features-container:nth-of-type(5) {
+  background: linear-gradient(to bottom, #333333, #1a1a1a);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.features-container:nth-of-type(5) .feature-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.features-container:nth-of-type(5) .button-container {
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .features-container:nth-of-type(2),
+  .features-container:nth-of-type(3),
+  .features-container:nth-of-type(4),
+  .features-container:nth-of-type(5) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .features-container:nth-of-type(5) .feature-title {
+    font-size: 2.5rem;
+  }
+}
+  <style>
+</head>
+<body>
+  <div class="background-container">
+    <div class="logo-container">
+      <img src="https://anoxle.github.io/exco/icon.png" alt="Chatto Logo" class="logo">
+    </div>
+    <div class="text-container">
+      <h1 class="main-text">Chatto</h1>
+      <p class="sub-text">Your Versatile AI Companion</p>
+      <div class="button-container">
+        <a href="exco/dashboard" class="dashboard-button">Dashboard</a>
+        <a href="https://anoxle.github.io/exco/invite" class="invite-button">Invite</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-container">
+    <div class="feature-item">
+      <img src="https://anoxle.github.io/exco/examples/fiydSmDlLspeEyht.png" alt="AI Powered Chats" class="feature-image">
+      <div class="feature-text">
+        <h2 class="feature-title">AI Powered Chats</h2>
+        <p class="feature-description">Chat with Chatto unlimitedly and for free in any server</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-container">
+    <div class="feature-item">
+      <img src="https://anoxle.github.io/exco/examples/fiydSmDlLspeEyht.png" alt="Built with moderation commands" class="feature-image">
+      <div class="feature-text">
+        <h2 class="feature-title">Built with moderation commands</h2>
+        <p class="feature-description">For completely free!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-container">
+    <div class="feature-item">
+      <img src="https://anoxle.github.io/exco/examples/fiydSmDlLspeEyht.png" alt="AI Features" class="feature-image">
+      <div class="feature-text">
+        <h2 class="feature-title">AI Features</h2>
+        <p class="feature-description">AI Image creator, AI Background remover beta, AI Image upscaler beta, AI Characters (Express) beta</p>
+        <p class="feature-beta">Beta = Might not be usable for everyone</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-container">
+    <div class="feature-item">
+      <h2 class="feature-title">What are you waiting for?</h2>
+      <div class="button-container">
+        <a href="exco/support" class="dashboard-button">Discord Server</a>
+        <a href="https://anoxle.github.io/exco/invite" class="invite-button">Invite</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const featuresContainers = document.querySelectorAll('.features-container');
+      featuresContainers.forEach(function(container) {
+        const featurePosition = container.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (featurePosition < screenHeight) {
+          container.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
