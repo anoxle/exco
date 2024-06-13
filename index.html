@@ -1,73 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restricted to Invite Page</title>
-  <style>
-    body {
-      background-color: #36393f;
-      color: #dcddde;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatto | Your Versatile AI Companion</title>
+    <meta name="description" content="Chatto is a versatile AI companion that offers a range of features to enhance your chat experience. From AI-powered conversations to image creation, Chatto has got you covered.">
+    <meta name="keywords" content="Chatto, AI Companion, AI Chat, Image Creation, AI Features">
+    <meta name="author" content="Fasver Inc">
+    <meta name="copyright" content="2024 Fasver">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Chatto | Your Versatile AI Companion">
+    <meta property="og:description" content="Chatto is a versatile AI companion that offers a range of features to enhance your chat experience. From AI-powered conversations to image creation, Chatto has got you covered.">
+    <meta property="og:image" content="https://anoxle.github.io/exco/icon.png">
+    <meta property="og:url" content="https://anoxle.github.io/exco/">
+    <meta name="twitter:title" content="Chatto | Your Versatile AI Companion">
+    <meta name="twitter:description" content="Chatto is a versatile AI companion that offers a range of features to enhance your chat experience. From AI-powered conversations to image creation, Chatto has got you covered.">
+    <meta name="twitter:image" content="https://anoxle.github.io/exco/icon.png">
+    <link rel="icon" href="https://anoxle.github.io/exco/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a, #333333);
+            animation: loopy 10s ease-in-out infinite;
+        }
 
-    .message {
-      text-align: center;
-      padding: 20px;
-      border-radius: 8px;
-      background-color: #2f3136;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
+        @keyframes loopy {
+            0%, 100% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+        }
 
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
+        .logo-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: logo-up 1s ease-in-out;
+        }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
+        @keyframes logo-up {
+            0% {
+                transform: translate(-50%, 100%);
+            }
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
 
-    a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #7289da;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
+        .logo {
+            width: 150px;
+            height: 150px;
+        }
 
-    a:hover {
-      background-color: #677bc4;
-    }
-  </style>
+        .text-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation: text-fade-in 1s ease-in-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes text-fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .main-text {
+            font-size: 4rem;
+            margin: 0;
+            animation: text-grow 1s ease-in-out;
+        }
+
+        @keyframes text-grow {
+            0% {
+                font-size: 0;
+            }
+            100% {
+                font-size: 4rem;
+            }
+        }
+
+        .sub-text {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .button-container {
+            margin-top: 2rem;
+            animation: button-slide-up 1s ease-in-out 1s forwards;
+            transform: translateY(100%);
+        }
+
+        @keyframes button-slide-up {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .dashboard-button,
+        .invite-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 0 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            animation: button-scale 0.5s ease-in-out;
+        }
+
+        @keyframes button-scale {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .dashboard-button:hover,
+        .invite-button:hover {
+            background-color: #444;
+        }
+
+        .features-container {
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .features-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 2rem;
+        }
+
+        .feature-image {
+            width: 494px;
+            height: 164px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .feature-text {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 4rem;
+            margin-top: 0;
+        }
+
+        .feature-description {
+            font-size: 1.2rem;;
+        }
+
+        .feature-beta {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .features-container:nth-of-type(2),
+        .features-container:nth-of-type(4) {
+            background: linear-gradient(to bottom, #1a1a1a, #333333);
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .features-container:nth-of-type(3),
+        .features-container:nth-of-type(5) {
+            background: linear-gradient(to bottom, #333333, #1a1a1a);
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .features-container:nth-of-type(5) .feature-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-container:nth-of-type(5) .button-container {
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .features-container {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .features-container:nth-of-type(5) .feature-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="message">
-      <h1>Restricting you to the Invite Page</h1>
-      <p>You are currently being restricted to the following page:</p>
-      <a href="https://anoxle.github.io/exco/invite">https://anoxle.github.io/exco/invite</a>
+    <div class="background-container">
+        <div class="logo-container">
+            <img src="https://anoxle.github.io/exco/icon.png" alt="Chatto Logo" class="logo">
+        </div>
+        <div class="text-container">
+            <h1 class="main-text">Chatto</h1>
+            <p class="sub-text">Your Versatile AI Companion</p>
+            <div class="button-container">
+                <a href="exco/dashboard" class="dashboard-button">Dashboard</a>
+                <a href="https://anoxle.github.io/exco/invite" class="invite-button">Invite</a>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- Page 1 -->
+    <div class="features-container">
+        <p class="page-number">Page 1</p>
+        <div class="feature-item">
+            <img src="https://anoxle.github.io/exco/examples/fiydSmDlLspeEyht.png" alt="Equipped with a variety of versatile commands" class="feature-image">
+            <div class="feature-text">
+                <h2 class="feature-title">AI Powered Chats</h2>
+                <p class="feature-description">Chat with Chatto unlimitedly and for free in any server</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="features-container">
+        <p class="page-number">Page 2</p>
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2 class="feature-title">Equipped with a variety of versatile commands</h2>
+                <p class="feature-description">For completely free!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="features-container">
+        <p class="page-number">Page 3</p>
+        <div class="feature-item">
+            <h2 class="feature-title">AI Features</h2>
+            <p class="feature-description" style="font-size: 1.2rem; text-align: center;">AI Image creator, <br>AI Background remover beta, <br>AI Image upscaler beta, <br>AI Characters (Express) beta</p>
+            <p class="feature-beta" style="font-size: 1.2rem;">Beta = Might not be usable for everyone</p>
+        </div>
+    </div>
 
   <script>
-    window.onload = function() {
-      if (window.location.href !== 'https://anoxle.github.io/exco/invite') {
-        window.location.href = 'https://anoxle.github.io/exco/invite';
-      }
-    };
+    window.addEventListener('scroll', function() {
+      const featuresContainers = document.querySelectorAll('.features-container');
+      featuresContainers.forEach(function(container) {
+        const featurePosition = container.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (featurePosition < screenHeight) {
+          container.classList.add('visible');
+        }
+      });
+    });
   </script>
+    <!-- Page 4 -->
+    <div class="features-container">
+        <p class="page-number">Page 4</p>
+        <div class="feature-item">
+            <h2 class="feature-title">What are you waiting for?</h2>
+            <div class="button-container">
+                <a href="https://anoxle.github.io/exco/support" class="dashboard-button">Discord Server</a>
+                <a href="https://anoxle.github.io/exco/invite" class="invite-button">Invite</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Page END -->
+<div class="end-page">
+    <hr class="divider">
+    <div class="footer-container">
+        <p class="footer-text">Chatto</p>
+        <div class="footer-links">
+            <a href="https://anoxle.github.io/exco/invite" class="footer-link">Invite</a>
+            <a href="https://anoxle.github.io/exco/dashboard" class="footer-link">Dashboard</a>
+            <a href="#top" class="footer-link" onclick="scrollToTop()">Go to top</a>
+            <a href="https://anoxle.github.io/exco/support" class="footer-link">Discord Server</a>
+        </div>
+    </div>
+</div>
+
+<style>
+   .end-page {
+        background-color: #333;
+        padding: 2rem;
+        text-align: center;
+    }
+
+   .divider {
+        border: none;
+        border-top: 1px solid #555;
+        margin: 2rem 0;
+    }
+
+   .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   .footer-text {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+   .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+   .footer-link {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease-in-out;
+    }
+
+   .footer-link:hover {
+        color: #ccc;
+    }
+	::-webkit-scrollbar {
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 10px;
+	}
+
+	::-webkit-scrollbar-thumb {
+	  background-color: #333;
+	  border-radius: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+	  background-color: #f0f0f0;
+	  border-radius: 10px;
+	}
+</style>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'mooth' });
+        }
+    </script>
 </body>
 </html>
