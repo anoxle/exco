@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Fasver">
+  <meta name="description" content="AI-Powered Discord bot (FREE)">
+  <title>Chatto | AI-Powered</title>
+  <link rel="icon" type="image/png" href="https://anoxle.github.io/exco/logo2.png">
+  <style>
+    body{margin:0;padding:0;font-family:Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;background-color:#36393f;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh;animation:fadeIn 0.5s ease}.container{text-align:center;position:relative}.normal-recommendation{color:#ff0000;font-weight:bold;margin-bottom:20px;padding:10px;background-color:#202225;border-radius:5px;display:inline-block;animation:fadeIn 0.5s ease}.black-box{background-color:#202225;border-radius:8px;padding:20px;max-width:400px;margin:auto;box-shadow:0 0 20px rgba(0,0,0,0.3);position:relative;animation:scaleIn 0.5s ease}h1{font-size:24px;margin-bottom:20px;color:#fff;font-weight:500;animation:fadeIn 0.5s ease}.icon{width:100px;height:100px;margin-bottom:10px;border-radius:50%;animation:rotateIn 0.5s ease}.bold-text{font-weight:bold;margin-bottom:10px;font-size:18px;color:#fff;animation:fadeIn 0.5s ease}p{color:#b9bbbe;margin-bottom:15px;animation:fadeIn 0.5s ease}.button{background-color:#7289da;color:#fff;border:none;padding:15px 40px;margin:10px;cursor:pointer;transition:background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;border-radius:5px;display:inline-block;text-decoration:none;font-weight:bold;animation:fadeIn 0.5s ease}.button:hover{background-color:#677bc4}.button.disabled{opacity:0.5;cursor:not-allowed}.checkbox-container{display:flex;justify-content:center;align-items:center;margin-bottom:20px;animation:fadeIn 0.5s ease}.checkbox-container input[type="checkbox"]{appearance:none;-webkit-appearance:none;-moz-appearance:none;width:20px;height:20px;border:2px solid #7289da;border-radius:4px;outline:none;cursor:pointer;margin-right:10px;transition:background-color 0.3s ease}.checkbox-container input[type="checkbox"]:checked{background-color:#7289da;animation:checkmark 0.3s ease}.checkbox-container input[type="checkbox"]:checked::before{content:"✓";display:block;color:#fff;text-align:center;font-size:16px;line-height:20px}.checkbox-container label{color:#b9bbbe;cursor:pointer;font-size:16px}.checkbox-container label a{color:#b9bbbe;text-decoration:underline;cursor:pointer;font-size:16px}.rb{background-color:#202225;border-radius:8px;padding:20px;max-width:400px;margin:20px auto 0;box-shadow:0 0 20px rgba(0,0,0,0.3);position:relative;animation:scaleIn 0.5s ease;display:none}.rb h2{font-size:18px;margin-bottom:10px;color:#fff;font-weight:500;cursor:pointer}.rb.dropdown{display:none;margin-top:10px;animation:fadeIn 0.3s ease}.rb.dropdown p{color:#b9bbbe;margin-bottom:10px}.rb.dropdown.bot-name{font-size:16px;color:#fff;margin-bottom:5px}.rb.dropdown.tools{font-weight:bold}.rb.dropdown.tool{color:#b9bbbe;display:block;padding:2px 0}.rb.dropdown.tool:hover{color:#fff}.rb.dropdown.website-button{background-color:#7289da;color:#fff;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px}.rb.dropdown.website-button:hover{background-color:#677bc4}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes scaleIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}@keyframes rotateIn{from{transform:rotate(-360deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes checkmark{0%{transform:scale(0.5)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="normal-recommendation">Normal is recommended</div>
+    <div class="black-box">
+      <img src="https://anoxle.github.io/exco/logo2.png" alt="Icon" class="icon">
+      <h1>Chatto</h1>
+      <div class="bold-text">Choose Permissions</div>
+      <div class="checkbox-container">
+        <input type="checkbox" id="acb" name="acb">
+        <label for="acb">I agree to the <a href="https://anoxle.github.io/exco/rules" target="_blank">rules</a></label>
+      </div>
+      <a href="#" class="button disabled" id="normal-button">NORMAL</a>
+      <a href="#" class="button disabled" id="admin-button">ADMINISTRATOR</a>
+      <p>Choose which permissions you would like to invite the client with</p>
+    </div>
+    <div class="rb">
+      <h2>Quick-Invite</h2>
+      <div class="dropdown">
+        <p class="bot-name">Carl-Bot</p>
+        <p class="tools">Tools:</p>
+        <a href="#" class="tool">1 | Moderation Tools</a>
+        <a href="#" class="tool">2 | Auto ReactionRole</a>
+        <a href="#" class="tool">3 | Much more! add it today</a>
+        <a href="https://carl.gg" class="website-button" target="_blank">Carl-Bot (AD)</a>
+        <a href="https://anoxle.github.io/exco/quickinvite" class="website-button" target="_blank">QuickInvite</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const normalButton = document.getElementById('normal-button');
+    const adminButton = document.getElementById('admin-button');
+    const acb = document.getElementById('acb');
+    const rbHeader= document.querySelector('.rb h2');
+    const dropdown = document.querySelector('.rb .dropdown');
+    const normalButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=573266428689655&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Finvited.html&scope=identify+email+bot+applications.commands';
+    const adminButtonLink = 'https://discord.com/oauth2/authorize?client_id=1207724790635561001&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fanoxle.github.io%2Fexco%2Finvited.html&scope=identify+email+applications.commands+bot';
+    acb.addEventListener('change', () => {
+      if (acb.checked) {
+        normalButton.classList.remove('disabled');
+        adminButton.classList.remove('disabled');
+        normalButton.href = normalButtonLink;
+        adminButton.href = adminButtonLink;
+      } else {
+        normalButton.classList.add('disabled');
+        adminButton.classList.add('disabled');
+        normalButton.href = '#';
+        adminButton.href = '#';
+      }
+    });
+    rbHeader.addEventListener('click', () => {
+      if (acb.checked) {
+        dropdown.style.display = 'block';
+      } else {
+        alert('This is disabled for mobile');
+      }
+    });
+  </script>
+</body>
+</html>
