@@ -40,6 +40,9 @@
     </div>
   </div>
   <script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href = "https://anoxle.github.io/exco/mobileinvite.html";
+    }
     const normalButton = document.getElementById('normal-button');
     const adminButton = document.getElementById('admin-button');
     const agreeCheckbox = document.getElementById('agree-checkbox');
